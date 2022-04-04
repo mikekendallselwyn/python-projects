@@ -27,3 +27,23 @@ assert memoization_fibonacci(5) == 5
 
 print(memoization_fibonacci(1))
 print(memoization_fibonacci(4))
+
+
+def iterative_fibonacci(position: int) -> int:
+    """This function iterates from 0 to the given number to calculate what element is in
+        the fibonacci sequence at the given position"""
+
+    if position == 0:
+        return 0
+    last_number: int = 0
+    next_number: int = 1
+
+    for _ in range(1, position):
+        last_number, next_number = next_number, last_number + next_number
+
+    return next_number
+
+
+assert iterative_fibonacci(5) == 5
+print(iterative_fibonacci(1))
+print(iterative_fibonacci(4))
